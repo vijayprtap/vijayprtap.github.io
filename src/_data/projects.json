@@ -50,6 +50,21 @@
                     "title": "Sending Sensor Data to ThingSpeak (No Libraries Needed!)",
                     "image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*iszc6aN8YuoUuxhqOWf1Xw.jpeg",
                     "link": "https://medium.com/@vijayypratap002/sending-sensor-data-to-thingspeak-no-libraries-needed-0c9f0c806a2f"
+                },
+                {
+                    "title": "PongFox Wireless SmartPad",
+                    "image": "https://pongfox.com/images/products/pongfox_smartpad.png",
+                    "link": "https://pongfox.com/blog/introducing-the-pongfox-wireless-smartpad/"
+                },
+                {
+                    "title": "Auto Flip Pad",
+                    "image": "https://pongfox.com/images/products/pongfox_flip_pad.png",
+                    "link": "https://www.youtube.com/watch?v=c9VFIl8YoF0"
+                },
+                {
+                    "title": "Ball Recirculation system for Table tennis robot.",
+                    "image": "https://pongfox.com/images/products/pongfox_easynet.png",
+                    "link": "https://www.youtube.com/watch?v=61HoNlbkM6E"
                 }
             
             ]

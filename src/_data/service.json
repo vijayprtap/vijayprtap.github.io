@@ -4,34 +4,34 @@
         {
             "icon": "icon-bargraph",
             "title": "Embedded Firmware Development",
-            "description": "Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit."
+            "description": ""
         },
         {
             "icon": "icon-paintbrush",
             "title": "PCB Desinging",
-            "description": "Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit."
+            "description": ""
         },
         {
             "icon": "icon-paintbrush",
             "title": "Project Management",
-            "description": "Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit."
+            "description": ""
         }
     ],
     "row2": [
         {
             "icon": "icon-paintbrush",
             "title": "3D Design",
-            "description": "Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit."
+            "description": "----------------------------------------------"
         },
         {
             "icon": "icon-paintbrush",
             "title": "Mentorship",
-            "description": "Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit."
+            "description": "----------------------------------------------"
         },
         {
             "icon": "icon-paintbrush",
             "title": "Support",
-            "description": "Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit."
+            "description": "----------------------------------------------"
         }
     ]
 }

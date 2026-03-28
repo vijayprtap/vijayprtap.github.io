@@ -7,7 +7,7 @@
         },
         {
             "name": "Pcb Design",
-            "rating": "55"
+            "rating": "85"
         },
         {
             "name": "FreeRtos",
@@ -15,7 +15,7 @@
         },
         {
             "name": "Modbus",
-            "rating": "80"
+            "rating": "90"
         },
         {
             "name": "PCB Testing",
@@ -27,7 +27,7 @@
         },
         {
             "name": "Ardiuno",
-            "rating": "90"
+            "rating": "100"
         },
         {
             "name": "ESP-32    MCU's",
@@ -69,13 +69,13 @@
             "id": "3",
             "left": false,
             "name": "STM-32   MCU's",
-            "rating": "25"
+            "rating": "55"
         },
         {
             "id": "5",
             "left": false,
             "name": "Git",
-            "rating": "25"
+            "rating": "45"
         },
         {
             "id": "4",
@@ -93,7 +93,7 @@
             "id": "2",
             "left": false,
             "name": "ESP Now",
-            "rating": "55"
+            "rating": "65"
         }
     ]
 }

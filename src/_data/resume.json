@@ -2,10 +2,16 @@
     "title": "My Resume",
     "work_experience": [
         {
+            "left": false,
+            "position": "Embedded Engineer",
+            "company": "Nutritap Technologies🌱 - Nov 2025 - Present",
+            "description": "Skills: EasyEDA · STM32 · Bootloader Development · OTA · Raspi · PCB design · Draw.io"
+        },
+        {
             "left": true,
             "position": "Electronics & Firmware Engineer",
-            "company": "Bodhi Labs - 2024 - Present",
-            "description": "Skills: EasyEDA · Bitbucket · Electronic Speed Controller · Bldc Motors · BlHeli · Bluetooth Low Energy · Git"
+            "company": "Bodhi Labs - 2024 - Aug 2025",
+            "description": "1. Conducted R&D, implemented design improvements, and managed inventory and procurement.<br><br> 2. Designed PCBs and ensured seamless project execution.<br><br> 3. Developed a Table Tennis Robot with BLDC motors, ESC, a ball recirculation system, and ESP-NOW-enabled smart pad.<br><br> 4. Built a digital scoreboard with WS2812B LED strips and NRF buttons for real-time score updates.<br><br> 5. Provided technical support, resolving 95% of customer queries within 24 hours.<br><br> Skills: EasyEDA · Bitbucket · Electronic Speed Controller · Bldc Motors · BlHeli · Bluetooth Low Energy · Git"
         },
         {
             "left": false,
