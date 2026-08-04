@@ -74,6 +74,11 @@
             "image": "images/pcb.jpg",
             "url": "#pcb-designs",
             "articles": [
+                 {
+                    "title": "Vending machine controller",
+                    "image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*KiXTViNkmm2r2WVlNC89YA.jpeg",
+                    "link": "https://medium.com/@vijayypratap002/designing-a-drop-in-embedded-controller-for-legacy-vending-machines-cb0638d59c3e?sharedUserId=vijayypratap002"
+                }
                
            
             ]
