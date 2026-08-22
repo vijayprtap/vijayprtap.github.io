@@ -101,7 +101,12 @@
             "image": "images/stm.jpeg",
             "url": "#sim-microcontrollers",
             "articles": [
-               
+            {
+            "title": "Building an STM32 Bootloader and OTA Firmware Update System",
+            "image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*_tBBATkAoQkVwVl_9fTikQ.png",
+            "link": "https://medium.com/@vijayypratap002/building-an-stm32-bootloader-and-ota-firmware-update-system-de2f359ded5d?sharedUserId=vijayypratap002"
+                }
+
             ]
         },
         {
