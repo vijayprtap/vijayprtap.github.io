@@ -93,6 +93,12 @@
             "image": "images/electronics.jpg",
             "url": "#electronics",
             "articles": [
+            {
+                "title": "Designing an IR-Based Product Drop Detection System",
+                    "image": "https://miro.medium.com/v2/resize:fit:828/format:webp/1*hWKPqolP3dGh9ArDR3Fbjw.jpeg",
+                    "link": "https://medium.com/@vijayypratap002/designing-an-ir-based-product-drop-detection-system-for-a-vending-machine-2d7f3ba4e7e4?sharedUserId=vijayypratap002"
+                }
+                
               
             ]
         },
