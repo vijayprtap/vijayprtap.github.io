@@ -1,5 +1,15 @@
+{#- Nunjucks has no ternary operator, so htmlLang needs an explicit branch.
+    localeAlternate handles both directions on its own, so the hreflang paths
+    are computed once and are identical from either locale. -#}
+{%- if isGermanPage(page.url) -%}
+{%- set htmlLang = 'de' -%}
+{%- else -%}
+{%- set htmlLang = 'en' -%}
+{%- endif -%}
+{%- set enPath = localeAlternate(page.url, 'en') -%}
+{%- set dePath = localeAlternate(page.url, 'de') -%}
 <!DOCTYPE HTML>
-<html>
+<html lang="{{ htmlLang }}">
 
 <head>
 	<meta charset="utf-8">
@@ -10,6 +20,14 @@
 	<meta name="keywords"
 		content="iot, embedded engineer, electronics, pcb design, arduino, stm32, esp32, freertos, firmware developer" />
 	<meta name="author" content="{{ portfolio.name }}" />
+
+	<!-- Localized SEO. hreflang requires absolute URLs, so they are built from
+	     site.url instead of being left root-relative. Both tags describe THIS
+	     page, so they always reference the same content; x-default is English. -->
+	<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+	<link rel="alternate" hreflang="en" href="{{ site.url }}{{ enPath }}" />
+	<link rel="alternate" hreflang="de" href="{{ site.url }}{{ dePath }}" />
+	<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ enPath }}" />
 
 	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content="" />

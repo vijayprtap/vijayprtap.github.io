@@ -34,6 +34,14 @@ module.exports = config => {
     // never re-implement the /de test (and get it subtly wrong).
     config.addNunjucksGlobal('isGermanPage', (currentUrl) => isGermanUrl(currentUrl));
 
+    // This page's own path in the requested locale. hreflang needs the EN and the
+    // DE counterpart of whichever page is rendering, so the two tags always
+    // point at the same content rather than at a fixed pair of URLs.
+    config.addNunjucksGlobal('localeAlternate', (currentUrl, lang) => {
+        if (lang === 'de') { return isGermanUrl(currentUrl) ? currentUrl : '/de' + currentUrl; }
+        return isGermanUrl(currentUrl) ? currentUrl.replace(/^\/de(?=\/|$)/, '') || '/' : currentUrl;
+    });
+
     return {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
