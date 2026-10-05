@@ -176,12 +176,22 @@
 		// handler below relies on seeing every other click.
 		var qrEl = document.getElementById("coffee-qr");
 		if(qrEl) {
+			var flashMs = parseInt(popover.getAttribute("data-qr-flash-ms"), 10);
+			if(!isFinite(flashMs)) { flashMs = 1200; }
+
 			document.addEventListener("click", function(event) {
 				var trigger = event.target.closest && event.target.closest(".btn-buy");
 				if(!trigger || !popover.contains(trigger)) { return; }
 				event.preventDefault();
 				var smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-				qrEl.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+				// Nothing to scroll in a tall viewport, so fall back to a
+				// short outline pulse to acknowledge the click.
+				if(popover.scrollHeight > popover.clientHeight) {
+					qrEl.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+				} else {
+					qrEl.classList.add("qr-flash");
+					setTimeout(function() { qrEl.classList.remove("qr-flash"); }, flashMs);
+				}
 			});
 		}
 

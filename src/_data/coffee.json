@@ -1,8 +1,9 @@
 {
-    "//": "ONLY 'title' and 'items' are required - delete any other key you do not need. ADD ITEMS: copy one object from 'items' into the [ ] and edit it. IMAGE: a full https:// link, or 'images/my.jpg' after dropping the file into src/images/. 'qr' and 'alt_link' are optional - remove the whole block to hide it.",
+    "//": "ONLY 'title' and 'items' are required - delete any other key you do not need. ADD ITEMS: copy one object from 'items' into the [ ] and edit it. IMAGE: a full https:// link, or 'images/my.jpg' after dropping the file into src/images/. 'qr' and 'alt_link' are optional - remove the whole block to hide it. 'qr_flash_ms' is optional and defaults to 1200.",
     "title": "Say thanks with coffee",
     "button_text": "Buy me a coffee",
     "buy_text": "Buy",
+    "qr_flash_ms": 1200,
     "description": "Every tutorial, PCB design file and firmware project on this site is free. Coffee keeps the LEDs lit and the coffee machines stocked - if something here saved you time, toss in whatever feels right. Completely optional, and genuinely, thank you.",
     "currency": "₹",
     "items": [

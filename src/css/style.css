@@ -1800,4 +1800,11 @@ input[type="text"] {
   box-shadow: none;
 }
 
+/* Acknowledges a Buy click when the popover is too short to scroll. An
+   instant outline swap, not an animation, so reduced motion needs no override. */
+.coffee-qr-wrap.qr-flash {
+	outline: 2px solid #1cd6ac;
+	outline-offset: 3px;
+}
+
 /*# sourceMappingURL=style.css.map */
