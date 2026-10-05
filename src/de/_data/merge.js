@@ -20,7 +20,19 @@ var deepMerge = function(base, overlay) {
         // keys, so a key missing from base is a typo and is dropped rather than
         // silently injected. Task 5 asserts every German key exists in English.
         if(!Object.prototype.hasOwnProperty.call(base, key)) { return; }
-        out[key] = isPlainObject(value) ? deepMerge(out[key], value) : value;
+
+        var current = out[key];
+        if(Array.isArray(value) && Array.isArray(current) && value.length === current.length) {
+            // Same length means the same list, translated - so merge per entry and
+            // let each entry fall back per key. Without this, a sparse German
+            // overlay of projects.json would replace topics[] wholesale and drop
+            // every image, url and article.
+            out[key] = value.map(function(item, index) {
+                return isPlainObject(item) && isPlainObject(current[index]) ? deepMerge(current[index], item) : item;
+            });
+            return;
+        }
+        out[key] = isPlainObject(value) ? deepMerge(current, value) : value;
     });
     return out;
 };
