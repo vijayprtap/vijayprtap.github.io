@@ -49,7 +49,7 @@
 <div class="fh5co-loader"></div>
 <div id="page">
 	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner"
-		style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+		style="background-image: url(images/cover.png); --cover-scrim: 0.42;">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row justify-content-center">
@@ -65,7 +65,7 @@
 								<li><a href="https://www.linkedin.com/in/vijay-pratap-singhh" target="_blank"><i class="icon-linkedin2"></i></a></li>
 								<li><a href="https://github.com/vijayprtap?tab=repositories" target="_blank"><i class="icon-github2"></i></a></li>
 								<li><a href="https://youtube.com" target="_blank"><i class="icon-youtube2"></i></a></li>
-								<li><a href="https://www.instagram.com/im.vindictxve" target="_blank"><i class="icon-instagram2"></i></a></li>
+								<li><a href="https://www.instagram.com/mr.nevergaveafckk/" target="_blank"><i class="icon-instagram2"></i></a></li>
 							</ul>
 							</p>
 						</div>
@@ -75,7 +75,8 @@
 		</div>
 	</header>
 
-	<div id="fh5co-about" class="animate-box">
+	<div id="fh5co-about" class="animate-box fh5co-iridiums-bg">
+		<canvas class="fh5co-iridiums" aria-hidden="true"></canvas>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -105,7 +106,7 @@
 						<li><a href="https://www.linkedin.com/in/vijay-pratap-singhh" target="_blank"><i class="icon-linkedin2"></i></a></li>
 						<li><a href="https://github.com/vijayprtap?tab=repositories" target="_blank"><i class="icon-github2"></i></a></li>
 						<li><a href="https://youtube.com" target="_blank"><i class="icon-youtube2"></i></a></li>
-						<li><a href="https://www.instagram.com/im.vindictxve" target="_blank"><i class="icon-instagram2"></i></a></li>
+						<li><a href="https://www.instagram.com/mr.nevergaveafckk/" target="_blank"><i class="icon-instagram2"></i></a></li>
 					</ul>
 					</p>
 				</div>
@@ -176,7 +177,8 @@
 	</div>
 
 	<!-- Experience -->
-	<div id="fh5co-resume" class="fh5co-bg-color">
+	<div id="fh5co-resume" class="fh5co-iridiums-bg">
+		<canvas class="fh5co-iridiums" aria-hidden="true"></canvas>
 		<div class="container">
 			<div class="row justify-content-center animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -420,7 +422,8 @@
 	</div>
 
 	<!-- Skills -->
-	<div id="fh5co-skills" class="animate-box">
+	<div id="fh5co-skills" class="animate-box fh5co-iridiums-bg">
+		<canvas class="fh5co-iridiums" aria-hidden="true"></canvas>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -613,6 +616,50 @@
 		</div>
 	</div>
 	</main>
+	<!-- Custom arrow cursor. Geometry comes from src/_data/cursor.json: the
+     data-* attributes feed js/main.js, the inline style carries what CSS needs.
+     transform-origin is the arrow tip (pivot_x/pivot_y), so the nose stays
+     pinned to the pointer while the body swings through its turns. -->
+<div class="fh5co-cursor" aria-hidden="true"
+	data-enabled="true"
+	data-size="40"
+	data-heading-rate="18"
+	data-idle-speed="40"
+	data-heading-noise-floor="220"
+	data-idle-rate="4"
+	data-idle-grace-ms="120"
+	data-idle-pointing-up-deg="0"
+	data-velocity-rate="24"
+	data-bank-rate="12"
+	data-bank-max-deg="34"
+	data-bank-gravity="9000"
+	style="width:40px;height:40px;transform-origin:50.8% 7.4%;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 50 54" fill="none">
+		<g filter="url(#fh5co-cursor-shadow)">
+			<path
+				d="M42.6817 41.1495L27.5103 6.79925C26.7269 5.02557 24.2082 5.02558 23.3927 6.79925L7.59814 41.1495C6.75833 42.9759 8.52712 44.8902 10.4125 44.1954L24.3757 39.0496C24.8829 38.8627 25.4385 38.8627 25.9422 39.0496L39.8121 44.1954C41.6849 44.8902 43.4884 42.9759 42.6817 41.1495Z"
+				fill="black" />
+			<path
+				d="M43.7146 40.6933L28.5431 6.34306C27.3556 3.65428 23.5772 3.69516 22.3668 6.32755L6.57226 40.6778C5.3134 43.4156 7.97238 46.298 10.803 45.2549L24.7662 40.109C25.0221 40.0147 25.2999 40.0156 25.5494 40.1082L39.4193 45.254C42.2261 46.2953 44.9254 43.4347 43.7146 40.6933Z"
+				stroke="white" stroke-width="2.25825" />
+		</g>
+		<defs>
+			<filter id="fh5co-cursor-shadow" x="0.602397" y="0.952444" width="49.0584" height="52.428"
+				filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+				<feFlood flood-opacity="0" result="BackgroundImageFix" />
+				<feColorMatrix in="SourceAlpha" type="matrix"
+					values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+				<feOffset dy="2.25825" />
+				<feGaussianBlur stdDeviation="2.25825" />
+				<feComposite in2="hardAlpha" operator="out" />
+				<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0" />
+				<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+				<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+			</filter>
+		</defs>
+	</svg>
+</div>
+
 	<div id="fh5co-started" class="fh5co-bg-dark bg-custom-orange text-white py-5">
     <div class="overlay"></div>
     <div class="container">
@@ -628,6 +675,202 @@
 
 <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+</div>
+	<!-- Buy Me a Coffee : floating button + neon popover. Items live in src/_data/coffee.json -->
+
+
+<button class="coffee-fab" id="coffee-fab" type="button" aria-expanded="false" aria-controls="fh5co-coffee">
+    
+<svg class="cup-icon " viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g class="cup-steam">
+        <rect x="9" y="0" width="9" height="9" />
+        <rect x="27" y="0" width="9" height="9" />
+        <rect x="18" y="9" width="9" height="9" />
+    </g>
+    <g class="cup-body">
+        <rect x="18" y="27" width="9" height="9" />
+        <rect x="27" y="27" width="9" height="9" />
+        <rect x="36" y="27" width="9" height="9" />
+        <rect x="45" y="27" width="9" height="9" />
+        <rect x="54" y="27" width="9" height="9" />
+        <rect x="63" y="27" width="9" height="9" />
+        <rect x="9" y="36" width="9" height="9" />
+        <rect x="72" y="36" width="9" height="9" />
+        <rect x="9" y="45" width="9" height="9" />
+        <rect x="72" y="45" width="9" height="9" />
+        <rect x="81" y="45" width="9" height="9" />
+        <rect x="9" y="54" width="9" height="9" />
+        <rect x="72" y="54" width="9" height="9" />
+        <rect x="9" y="63" width="9" height="9" />
+        <rect x="72" y="63" width="9" height="9" />
+        <rect x="81" y="63" width="9" height="9" />
+        <rect x="9" y="72" width="9" height="9" />
+        <rect x="72" y="72" width="9" height="9" />
+        <rect x="18" y="81" width="9" height="9" />
+        <rect x="27" y="81" width="9" height="9" />
+        <rect x="36" y="81" width="9" height="9" />
+        <rect x="45" y="81" width="9" height="9" />
+        <rect x="54" y="81" width="9" height="9" />
+        <rect x="63" y="81" width="9" height="9" />
+    </g>
+</svg>
+Buy me a coffee
+</button>
+
+<div class="coffee-popover" id="fh5co-coffee" role="dialog" aria-label="Say thanks with coffee">
+    <div class="coffee-popover-head">
+        <div class="coffee-popover-title">
+            
+<svg class="cup-icon cup-icon-head" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g class="cup-steam">
+        <rect x="9" y="0" width="9" height="9" />
+        <rect x="27" y="0" width="9" height="9" />
+        <rect x="18" y="9" width="9" height="9" />
+    </g>
+    <g class="cup-body">
+        <rect x="18" y="27" width="9" height="9" />
+        <rect x="27" y="27" width="9" height="9" />
+        <rect x="36" y="27" width="9" height="9" />
+        <rect x="45" y="27" width="9" height="9" />
+        <rect x="54" y="27" width="9" height="9" />
+        <rect x="63" y="27" width="9" height="9" />
+        <rect x="9" y="36" width="9" height="9" />
+        <rect x="72" y="36" width="9" height="9" />
+        <rect x="9" y="45" width="9" height="9" />
+        <rect x="72" y="45" width="9" height="9" />
+        <rect x="81" y="45" width="9" height="9" />
+        <rect x="9" y="54" width="9" height="9" />
+        <rect x="72" y="54" width="9" height="9" />
+        <rect x="9" y="63" width="9" height="9" />
+        <rect x="72" y="63" width="9" height="9" />
+        <rect x="81" y="63" width="9" height="9" />
+        <rect x="9" y="72" width="9" height="9" />
+        <rect x="72" y="72" width="9" height="9" />
+        <rect x="18" y="81" width="9" height="9" />
+        <rect x="27" y="81" width="9" height="9" />
+        <rect x="36" y="81" width="9" height="9" />
+        <rect x="45" y="81" width="9" height="9" />
+        <rect x="54" y="81" width="9" height="9" />
+        <rect x="63" y="81" width="9" height="9" />
+    </g>
+</svg>
+
+            <h4>Say thanks with coffee</h4>
+        </div>
+        <button class="coffee-close" id="coffee-close" type="button" aria-label="Close">&#10005;</button>
+    </div>
+
+    
+    <p class="coffee-note">Every tutorial, PCB design file and firmware project on this site is free. Coffee keeps the LEDs lit and the coffee machines stocked - if something here saved you time, toss in whatever feels right. Completely optional, and genuinely, thank you.</p>
+    
+
+    
+    
+    <div class="row row-cols-1 row-cols-sm-2 g-3 coffee-grid">
+        
+        <div class="col">
+            <div class="coffee-card">
+                
+                <img class="coffee-card-img" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&amp;q=80" alt="Coffee" loading="lazy">
+                
+                <div class="coffee-card-body">
+                    <h3 class="coffee-card-title">Coffee</h3>
+                    
+                    <p class="coffee-card-price">₹50</p>
+                    
+                    
+                    <p class="coffee-card-text">One hot cup, keeps the mornings honest</p>
+                    
+                    
+                    <a class="btn btn-buy" href="https://example.com/pay/coffee" target="_blank"
+                        rel="noopener">Buy</a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="coffee-card">
+                
+                <img class="coffee-card-img" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&amp;q=80" alt="Pizza" loading="lazy">
+                
+                <div class="coffee-card-body">
+                    <h3 class="coffee-card-title">Pizza</h3>
+                    
+                    <p class="coffee-card-price">₹250</p>
+                    
+                    
+                    <p class="coffee-card-text">Pizza is the actual fuel for schematics</p>
+                    
+                    
+                    <a class="btn btn-buy" href="https://example.com/pay/pizza" target="_blank"
+                        rel="noopener">Buy</a>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="coffee-card">
+                
+                <img class="coffee-card-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&amp;q=80" alt="PCB Order" loading="lazy">
+                
+                <div class="coffee-card-body">
+                    <h3 class="coffee-card-title">PCB Order</h3>
+                    
+                    <p class="coffee-card-price">₹500</p>
+                    
+                    
+                    <p class="coffee-card-text">Funds my next prototype board</p>
+                    
+                    
+                    <a class="btn btn-buy" href="https://example.com/pay/pcb" target="_blank"
+                        rel="noopener">Buy</a>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+
+    
+    <div class="coffee-divider">or</div>
+    
+
+    
+    
+    <div class="coffee-qr-wrap">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=190x190&amp;data=upi%3A%2F%2Fpay%3Fpa%3Dexample%40upi%26pn%3DVijay%20Pratap%26cu%3DINR" alt="Scan with any UPI app">
+        
+        <span class="coffee-qr-ribbon">UPI</span>
+        
+    </div>
+    
+    
+    <p class="coffee-note coffee-note-center">Scan with any UPI app</p>
+    
+    
+    <p class="coffee-fineprint">QR didn't work? Use this UPI ID instead:</p>
+    <div class="coffee-code-row">
+        <code id="coffee-upi-id">example@upi</code>
+        <button class="coffee-copy" type="button" data-copy-target="coffee-upi-id">Copy</button>
+    </div>
+    
+    
+
+    
+    <a href="https://github.com/sponsors/vijayprtap" target="_blank" rel="noopener" class="coffee-sponsor-btn">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+        </svg>
+        Sponsor on GitHub <span
+                class="coffee-sponsor-sub">(international)</span>
+    </a>
+    
+
+    
 </div>
 
 	<!-- jQuery -->
@@ -648,6 +891,8 @@
 	<script src="js/google_map.js"></script>
 	<!-- Bootstrap 5 -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- Iridiums liquid metal background -->
+	<script src="js/iridiums.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
 </body>

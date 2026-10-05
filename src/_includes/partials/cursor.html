@@ -1,0 +1,43 @@
+<!-- Custom arrow cursor. Geometry comes from src/_data/cursor.json: the
+     data-* attributes feed js/main.js, the inline style carries what CSS needs.
+     transform-origin is the arrow tip (pivot_x/pivot_y), so the nose stays
+     pinned to the pointer while the body swings through its turns. -->
+<div class="fh5co-cursor" aria-hidden="true"
+	data-enabled="{{ cursor.enabled }}"
+	data-size="{{ cursor.size }}"
+	data-heading-rate="{{ cursor.heading_rate }}"
+	data-idle-speed="{{ cursor.idle_speed }}"
+	data-heading-noise-floor="{{ cursor.heading_noise_floor }}"
+	data-idle-rate="{{ cursor.idle_rate }}"
+	data-idle-grace-ms="{{ cursor.idle_grace_ms }}"
+	data-idle-pointing-up-deg="{{ cursor.idle_pointing_up_deg }}"
+	data-velocity-rate="{{ cursor.velocity_rate }}"
+	data-bank-rate="{{ cursor.bank_rate }}"
+	data-bank-max-deg="{{ cursor.bank_max_deg }}"
+	data-bank-gravity="{{ cursor.bank_gravity }}"
+	style="width:{{ cursor.size }}px;height:{{ cursor.size }}px;transform-origin:{{ cursor.pivot_x }}% {{ cursor.pivot_y }}%;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 50 54" fill="none">
+		<g filter="url(#fh5co-cursor-shadow)">
+			<path
+				d="M42.6817 41.1495L27.5103 6.79925C26.7269 5.02557 24.2082 5.02558 23.3927 6.79925L7.59814 41.1495C6.75833 42.9759 8.52712 44.8902 10.4125 44.1954L24.3757 39.0496C24.8829 38.8627 25.4385 38.8627 25.9422 39.0496L39.8121 44.1954C41.6849 44.8902 43.4884 42.9759 42.6817 41.1495Z"
+				fill="black" />
+			<path
+				d="M43.7146 40.6933L28.5431 6.34306C27.3556 3.65428 23.5772 3.69516 22.3668 6.32755L6.57226 40.6778C5.3134 43.4156 7.97238 46.298 10.803 45.2549L24.7662 40.109C25.0221 40.0147 25.2999 40.0156 25.5494 40.1082L39.4193 45.254C42.2261 46.2953 44.9254 43.4347 43.7146 40.6933Z"
+				stroke="white" stroke-width="2.25825" />
+		</g>
+		<defs>
+			<filter id="fh5co-cursor-shadow" x="0.602397" y="0.952444" width="49.0584" height="52.428"
+				filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+				<feFlood flood-opacity="0" result="BackgroundImageFix" />
+				<feColorMatrix in="SourceAlpha" type="matrix"
+					values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+				<feOffset dy="2.25825" />
+				<feGaussianBlur stdDeviation="2.25825" />
+				<feComposite in2="hardAlpha" operator="out" />
+				<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0" />
+				<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+				<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+			</filter>
+		</defs>
+	</svg>
+</div>

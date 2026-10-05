@@ -1,0 +1,21 @@
+{
+	"//": "Tuning for the custom cursor (.fh5co-cursor in partials/cursor.html, motion in js/main.js). Emitted as data-* attributes at build time, so edit this file and rebuild - no CSS or JS edits needed. Rates are in 1/s and behave identically at any refresh rate.",
+
+	"enabled": true,
+
+	"size": 40,
+	"pivot_x": 50.8,
+	"pivot_y": 7.4,
+
+	"heading_rate": 18,
+	"idle_speed": 40,
+	"heading_noise_floor": 220,
+	"idle_rate": 4,
+	"idle_grace_ms": 120,
+	"idle_pointing_up_deg": 0,
+
+	"velocity_rate": 24,
+	"bank_rate": 12,
+	"bank_max_deg": 34,
+	"bank_gravity": 9000
+}

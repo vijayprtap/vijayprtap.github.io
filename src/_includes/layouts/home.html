@@ -3,7 +3,7 @@
 <div class="fh5co-loader"></div>
 <div id="page">
 	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner"
-		style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+		style="background-image: url({{ portfolio.cover }}); --cover-scrim: {{ portfolio.cover_scrim }};">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row justify-content-center">
@@ -29,7 +29,8 @@
 		</div>
 	</header>
 
-	<div id="fh5co-about" class="animate-box">
+	<div id="fh5co-about" class="animate-box fh5co-iridiums-bg">
+		<canvas class="fh5co-iridiums" aria-hidden="true"></canvas>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -91,7 +92,8 @@
 	</div>
 
 	<!-- Experience -->
-	<div id="fh5co-resume" class="fh5co-bg-color">
+	<div id="fh5co-resume" class="fh5co-iridiums-bg">
+		<canvas class="fh5co-iridiums" aria-hidden="true"></canvas>
 		<div class="container">
 			<div class="row justify-content-center animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -201,7 +203,8 @@
 	</div>
 
 	<!-- Skills -->
-	<div id="fh5co-skills" class="animate-box">
+	<div id="fh5co-skills" class="animate-box fh5co-iridiums-bg">
+		<canvas class="fh5co-iridiums" aria-hidden="true"></canvas>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">

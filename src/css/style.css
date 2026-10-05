@@ -86,9 +86,11 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-header,
 .fh5co-cover {
-  background-color: transparent;
+  background-color: #000;
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   position: relative;
   height: 600px;
   width: 100%;
@@ -100,7 +102,14 @@ h1, h2, h3, h4, h5, h6, figure {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 144, 0, 0.9);
+  z-index: 1;
+  background: rgba(5, 7, 10, var(--cover-scrim, .42));
+}
+
+#fh5co-header .container,
+.fh5co-cover .container {
+  position: relative;
+  z-index: 2;
 }
 #fh5co-header .display-t,
 .fh5co-cover .display-t {
@@ -212,6 +221,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .35);
 }
 #fh5co-header .display-tc .fh5co-social-icons li a,
 .fh5co-cover .display-tc .fh5co-social-icons li a {
@@ -590,7 +600,12 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: normal;
-  color: #bfbfbf;
+  /* The theme default (#bfbfbf) lands at ~1.8:1 on the pale iridescent
+     background, which is unreadable now that the panels behind it are
+     transparent. Measured worst case against the darkest shader pixel
+     (relative luminance 0.41) is 4.8:1 at this value; #444 fell just short
+     at 4.3:1. Large text gets the full AAA margin on its own. */
+  color: #3d3d3d;
 }
 
 .timeline-body > p,
@@ -1289,6 +1304,500 @@ input[type="text"] {
 
 .js .animate-box {
   opacity: 0;
+}
+
+/* Buy Me a Coffee : dark neon popover, matched to src/sass/style.scss */
+.coffee-fab {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid rgba(28, 214, 172, 0.4);
+  border-radius: 8px;
+  background: #0b0e13;
+  color: #1cd6ac;
+  font-family: "Space Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  /* Opaque, not a translucent tint: the pill is fixed and drifts over the
+     orange Projects section and the pale iridiums sections, and a tinted
+     pill inherits those backdrops. Measured with a tint, teal text scored
+     1.26:1 over Projects and 1.58:1 over Resume/Skills. Against this panel
+     it holds 10.4:1 at every scroll position. The cup icon stays orange -
+     it clears 8.5:1 here and ties back to the site accent. */
+  box-shadow: 0 2px 14px -2px rgba(5, 7, 10, 0.65);
+  cursor: pointer;
+  -webkit-transition: border-color 0.15s ease, background 0.15s ease;
+  -o-transition: border-color 0.15s ease, background 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.coffee-fab:hover,
+.coffee-fab:focus {
+  border-color: #1cd6ac;
+  background: #10141b;
+  color: #1cd6ac;
+  outline: none;
+}
+
+.coffee-fab:focus-visible {
+  outline: 2px solid #1cd6ac;
+  outline-offset: 3px;
+}
+
+.cup-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #FF9000;
+  transform-origin: 65% 85%;
+  animation: coffee-cup-wiggle 2.6s ease-in-out infinite;
+}
+
+.cup-icon .cup-body {
+  fill: currentColor;
+}
+
+.cup-icon .cup-steam {
+  fill: #1cd6ac;
+  opacity: 0.85;
+}
+
+.cup-icon-head {
+  width: 26px;
+  height: 26px;
+  animation: none;
+}
+
+@keyframes coffee-cup-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(-9deg); }
+  20% { transform: rotate(7deg); }
+  30% { transform: rotate(0deg); }
+}
+
+.coffee-popover {
+  position: fixed;
+  bottom: 160px;
+  right: 20px;
+  z-index: 1001;
+  display: none;
+  width: 460px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 190px);
+  overflow-y: auto;
+  padding: 16px 18px;
+  background: #0b0e13;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 30px 70px -25px rgba(0, 0, 0, 0.75);
+  color: #eef1f5;
+  font-family: "Space Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  -webkit-overflow-scrolling: touch;
+}
+
+.coffee-popover.open {
+  display: block;
+  animation: coffee-fade-in-up 0.2s ease;
+}
+
+.coffee-popover::-webkit-scrollbar {
+  width: 8px;
+}
+
+.coffee-popover::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.coffee-popover::-webkit-scrollbar-thumb {
+  background: rgba(28, 214, 172, 0.3);
+  border-radius: 4px;
+}
+
+@keyframes coffee-fade-in-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.coffee-popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.coffee-popover-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.coffee-popover h4 {
+  margin: 0;
+  color: #eef1f5;
+  font-family: "Space Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.coffee-close {
+  padding: 2px;
+  border: none;
+  background: none;
+  color: #626c7a;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: color 0.15s ease;
+  -o-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+}
+
+.coffee-close:hover {
+  color: #eef1f5;
+}
+
+.coffee-note {
+  margin: 10px 0 0;
+  color: #9aa4b2;
+  font-size: 12.3px;
+  line-height: 1.55;
+}
+
+.coffee-note-center {
+  text-align: center;
+}
+
+.coffee-note code {
+  color: #1cd6ac;
+  font-size: 11.5px;
+}
+
+.coffee-grid {
+  margin: 14px 0 0;
+}
+
+.coffee-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: #10141b;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.coffee-card:hover {
+  border-color: rgba(28, 214, 172, 0.4);
+  box-shadow: 0 0 0 1px rgba(28, 214, 172, 0.4), 0 0 24px -6px rgba(28, 214, 172, 0.35);
+}
+
+.coffee-card-img {
+  display: block;
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  background: #161b24;
+}
+
+.coffee-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 12px 12px 14px;
+}
+
+.coffee-card-title {
+  margin: 0 0 2px;
+  color: #eef1f5;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.coffee-card-price {
+  margin: 0 0 8px;
+  color: #1cd6ac;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.coffee-card-text {
+  flex: 1 1 auto;
+  margin: 0 0 12px;
+  color: #9aa4b2;
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.coffee-card .btn-buy {
+  margin: auto 0 0;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid rgba(28, 214, 172, 0.4);
+  border-radius: 9px;
+  background: rgba(28, 214, 172, 0.1);
+  color: #eef1f5;
+  font-family: "Space Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.coffee-card .btn-buy:hover,
+.coffee-card .btn-buy:focus {
+  border-color: #1cd6ac;
+  background: rgba(28, 214, 172, 0.2);
+  color: #eef1f5;
+  outline: none;
+  box-shadow: none;
+}
+
+.coffee-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0;
+  color: #626c7a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.coffee-divider::before,
+.coffee-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.coffee-qr-wrap {
+  position: relative;
+  width: 190px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(28, 214, 172, 0.35);
+  border-radius: 10px;
+}
+
+.coffee-qr-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.coffee-qr-ribbon {
+  position: absolute;
+  top: 8px;
+  right: -30px;
+  transform: rotate(35deg);
+  padding: 3px 34px;
+  background: #FF9000;
+  color: #1a0900;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.coffee-fineprint {
+  margin: 12px 0 6px;
+  color: #626c7a;
+  font-size: 10.5px;
+}
+
+.coffee-code-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px 10px 14px;
+  background: #161b24;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+.coffee-code-row code {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  color: #1cd6ac;
+  font-size: 12.5px;
+  white-space: pre;
+}
+
+.coffee-copy {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: #0b0e13;
+  color: #9aa4b2;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: color 0.15s ease, border-color 0.15s ease;
+  -o-transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.coffee-copy:hover {
+  border-color: #1cd6ac;
+  color: #eef1f5;
+}
+
+.coffee-copy.copied {
+  border-color: rgba(28, 214, 172, 0.4);
+  color: #1cd6ac;
+}
+
+.coffee-sponsor-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border: 1px solid rgba(28, 214, 172, 0.4);
+  border-radius: 9px;
+  background: rgba(28, 214, 172, 0.1);
+  color: #eef1f5;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-transition: background 0.15s ease, border-color 0.15s ease;
+  -o-transition: background 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.coffee-sponsor-btn:hover {
+  border-color: #1cd6ac;
+  background: rgba(28, 214, 172, 0.2);
+  color: #eef1f5;
+}
+
+.coffee-sponsor-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.coffee-sponsor-sub {
+  color: #626c7a;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 640px) {
+  .coffee-fab {
+    right: 14px;
+    bottom: 84px;
+  }
+
+  .coffee-popover {
+    right: 16px;
+    bottom: 150px;
+    width: calc(100vw - 32px);
+    max-width: none;
+    max-height: calc(100vh - 175px);
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cup-icon,
+  .coffee-popover.open {
+    animation: none;
+  }
+}
+
+/* Custom arrow cursor. The markup lives in partials/cursor.html; main.js only
+   moves it. Suppressing the native pointer is scoped to a real pointing device -
+   applying `cursor: none` unconditionally would leave touch and stylus users
+   with no visible cursor at all. */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+.fh5co-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transform: translate3d(-100px, -100px, 0);
+  will-change: transform;
+  /* width/height and transform-origin are emitted inline from
+     src/_data/cursor.json. transform-origin is the arrow tip, so rotation
+     swings the body while the nose stays pinned to the pointer. Centring on
+     the pointer happens in the JS translate instead of negative margins,
+     which is what lets `size` stay a real parameter. */
+}
+
+@media (hover: none), (pointer: coarse) {
+  .fh5co-cursor {
+    display: none;
+  }
+}
+
+/* Iridiums background - the pale iridescent liquid metal rendered by
+   js/iridiums.js onto a WebGL2 canvas. The flat #e6e8ec underneath doubles as
+   the fallback whenever WebGL2 is unavailable or the script fails to load. */
+.fh5co-iridiums-bg {
+  position: relative;
+  background-color: #e6e8ec;
+}
+.fh5co-iridiums-bg > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.fh5co-iridiums {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* The resume timeline sits directly on the iridescent surface, so the panels
+   and the "Work Experience" / "Education" chips are transparent rather than the
+   near-white the theme ships with. Only the connecting rule is tinted, to keep
+   the spine readable against the pale metal. */
+#fh5co-resume ul.timeline:before {
+  background-color: rgba(0, 0, 0, .18);
+}
+#fh5co-resume ul.timeline > li > .timeline-panel {
+  background-color: transparent;
+  box-shadow: none;
+}
+#fh5co-resume .timeline-heading > div > h3 {
+  background: transparent;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=style.css.map */
