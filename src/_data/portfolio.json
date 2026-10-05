@@ -6,8 +6,8 @@
     "github_url": "https://github.com/vijayprtap?tab=repositories",
     "youtube_url": "https://youtube.com",
     "instagram_url": "https://www.instagram.com/mr.nevergaveafckk/",
-    "image": "images/profilepic.jpeg",
-    "image2": "../images/profilepic.jpeg",
-    "cover": "images/cover.png",
+"image": "/images/profilepic.jpeg",
+"image2": "/images/profilepic.jpeg",
+"cover": "/images/cover.png",
     "cover_scrim": "0.42"
 }
