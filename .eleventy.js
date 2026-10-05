@@ -30,6 +30,10 @@ module.exports = config => {
         return isGermanUrl(currentUrl) && !isGermanUrl(path) ? '/de' + path : path;
     });
 
+    // The switcher needs the same predicate the helpers use. Exposed so templates
+    // never re-implement the /de test (and get it subtly wrong).
+    config.addNunjucksGlobal('isGermanPage', (currentUrl) => isGermanUrl(currentUrl));
+
     return {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',

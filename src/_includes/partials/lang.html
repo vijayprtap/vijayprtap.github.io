@@ -1,0 +1,18 @@
+{#
+  EN | DE switcher. Pure HTML: the current language is inert text and the other
+  language is a real link, so URLs stay shareable and the back button works.
+  Included by base.html, so it renders on all four pages.
+  The locale comes from page.url via isGermanPage, matching the helpers, and
+  localePath maps this page's own path into the other locale. Because the two
+  locales are not mirror images (/projects/ <-> /de/projects/index.html),
+  page.url is passed as both arguments instead of assuming a fixed counterpart.
+#}
+<div class="lang-switch" role="group" aria-label="Language">
+  {%- if isGermanPage(page.url) %}
+  <span class="lang-switch__item is-current" aria-current="true">DE</span>
+  <a class="lang-switch__item" href="{{ localePath(page.url, page.url) }}" hreflang="en" lang="en">EN</a>
+  {%- else %}
+  <a class="lang-switch__item" href="{{ localePath(page.url, page.url) }}" hreflang="de" lang="de">DE</a>
+  <span class="lang-switch__item is-current" aria-current="true">EN</span>
+  {%- endif %}
+</div>

@@ -1807,4 +1807,71 @@ input[type="text"] {
 	outline-offset: 3px;
 }
 
+/* EN | DE pill. Fixed so it stays reachable while the hero scrolls beneath it;
+   z-index 1001 clears the coffee FAB (1000) and stays far below the custom
+   cursor (999999). Part of partials/lang.html, included by base.html, so it
+   appears on all four pages. */
+.lang-switch {
+	position: fixed;
+	top: 18px;
+	right: 18px;
+	z-index: 1001;
+	display: inline-flex;
+	align-items: stretch;
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	border-radius: 999px;
+	background: rgba(5, 7, 10, 0.72);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: 0.04em;
+}
+
+.lang-switch__item {
+	display: inline-flex;
+	align-items: center;
+	padding: 7px 13px;
+	color: rgba(255, 255, 255, 0.72);
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+/* The separator sits between the two halves without a second border rule. */
+.lang-switch__item + .lang-switch__item {
+	border-left: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.lang-switch__item:hover {
+	color: #ff9000;
+	text-decoration: none;
+}
+
+/* Current language is inert text, not a link: aria-current marks it for
+   assistive tech and there is no href to activate. */
+.lang-switch__item.is-current {
+	color: #ff9000;
+	cursor: default;
+}
+
+.lang-switch__item:focus-visible {
+	outline: 2px solid #ff9000;
+	outline-offset: -2px;
+}
+
+@media screen and (max-width: 768px) {
+	.lang-switch {
+		top: 12px;
+		right: 12px;
+		font-size: 12px;
+	}
+
+	.lang-switch__item {
+		padding: 6px 10px;
+	}
+}
+
 /*# sourceMappingURL=style.css.map */
