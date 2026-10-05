@@ -1,0 +1,34 @@
+{
+    "title": "Ein Dankeschön mit Kaffee",
+    "button_text": "Spendier mir einen Kaffee",
+    "buy_text": "Kaufen",
+    "close_label": "Schließen",
+    "copy_label": "Kopieren",
+    "copied_label": "Kopiert",
+    "copy_failed_label": "Fehlgeschlagen",
+    "or_divider": "oder",
+    "qr_fallback_note": "Hat der QR-Code nicht geklappt? Nutzen Sie stattdessen diese UPI-ID:",
+    "description": "Jedes Tutorial, jede PCB-Design-Datei und jedes Firmware-Projekt auf dieser Seite ist kostenlos. Kaffee hält die LEDs am Laufen und die Kaffeemaschinen gefüllt - wenn Ihnen hier etwas Zeit gespart hat, geben Sie, was Ihnen passen vollkommen. Freiwillig, und wirklich: vielen Dank.",
+    "items": [
+        {
+            "title": "Kaffee",
+            "description": "Eine heiße Tasse, die den Morgen ehrlich hält"
+        },
+        {
+            "title": "Pizza",
+            "description": "Pizza ist der eigentliche Treibstoff für Schaltpläne"
+        },
+        {
+            "title": "PCB-Auftrag",
+            "description": "Finanziert meine nächste Prototyp-Platine"
+        }
+    ],
+    "qr": {
+        "ribbon": "UPI",
+        "caption": "Mit jeder UPI-App scannen"
+    },
+    "alt_link": {
+        "label": "Auf GitHub unterstützen",
+        "sublabel": "(international)"
+    }
+}

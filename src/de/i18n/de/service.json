@@ -1,0 +1,25 @@
+{
+    "title": "Meine Leistungen",
+    "row1": [
+        {
+            "title": "Embedded-Firmware-Entwicklung"
+        },
+        {
+            "title": "PCB-Design"
+        },
+        {
+            "title": "Projektmanagement"
+        }
+    ],
+    "row2": [
+        {
+            "title": "3D-Design"
+        },
+        {
+            "title": "Mentorship"
+        },
+        {
+            "title": "Support"
+        }
+    ]
+}

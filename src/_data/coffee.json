@@ -29,18 +29,18 @@
             "link": "https://example.com/pay/pizza"
         },
         {
-            "title": "PCB Order",
-            "description": "Funds my next prototype board",
-            "price": "500",
-            "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
-            "link": "https://example.com/pay/pcb"
+            "title": "3D printer",
+            "description": "Funds my next 3d enclosures and parts",
+            "price": "???",
+            "image": "https://portal.bblmw.com/a1/video/print-20bbaebf8570d2/0.jpgw",
+            "link": "https://bambulab.com/en-in/a1"
         }
     ],
     "qr": {
-        "image": "https://api.qrserver.com/v1/create-qr-code/?size=190x190&data=upi%3A%2F%2Fpay%3Fpa%3Dexample%40upi%26pn%3DVijay%20Pratap%26cu%3DINR",
+        "image": "/images/upiqr.jpeg",
         "ribbon": "UPI",
         "caption": "Scan with any UPI app",
-        "upi_id": "example@upi"
+        "upi_id": "8510945954@kotakbank"
     },
     "alt_link": {
         "label": "Sponsor on GitHub",

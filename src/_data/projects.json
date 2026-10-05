@@ -4,7 +4,7 @@
     "topics": [
         {
             "title": "Arudino",
-            "image": "images/arduino.jpg",
+            "image": "/images/arduino.jpg",
             "url": "#arduino",
             "articles": [
                 {
@@ -23,7 +23,7 @@
        
         {
             "title": "ESP32 Microcontrollers",
-            "image": "images/esp.jpg",
+            "image": "/images/esp.jpg",
             "url": "#esp32-microcontrollers",
             "articles": [
                 {
@@ -71,7 +71,7 @@
          },
          {
             "title": "PCB Designs",
-            "image": "images/pcb.jpg",
+            "image": "/images/pcb.jpg",
             "url": "#pcb-designs",
             "articles": [
                  {
@@ -90,7 +90,7 @@
         },
         {
             "title": "Electronics",
-            "image": "images/electronics.jpg",
+            "image": "/images/electronics.jpg",
             "url": "#electronics",
             "articles": [
             {
@@ -104,7 +104,7 @@
         },
         {
             "title": "STM Microcontrollers",
-            "image": "images/stm.jpeg",
+            "image": "/images/stm.jpeg",
             "url": "#sim-microcontrollers",
             "articles": [
             {
@@ -117,7 +117,7 @@
         },
         {
             "title": "3D Printing",
-            "image": "images/3dprint.jpg",
+            "image": "/images/3dprint.jpg",
             "url": "#3d-printing",
             "articles": [
                 {

@@ -1,0 +1,23 @@
+{
+    "title": "Meine Projekte",
+    "topics": [
+        {
+            "title": "Arduino"
+        },
+        {
+            "title": "ESP32-Mikrocontroller"
+        },
+        {
+            "title": "PCB-Designs"
+        },
+        {
+            "title": "Elektronik"
+        },
+        {
+            "title": "STM-Mikrocontroller"
+        },
+        {
+            "title": "3D-Druck"
+        }
+    ]
+}

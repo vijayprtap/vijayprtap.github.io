@@ -80,7 +80,7 @@
 			<div class="row">
 				{% for item in projects.topics %}
 				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="/projects/{{ item.url }}" class="work" style="background-image: url({{item.image}});">
+					<a href="{{ localeUrl(page.url, '/projects/' + item.url) }}" class="work" style="background-image: url({{item.image}});">
 						<div class="desc">
 							<h3>{{ item.title }}</h3>
 						</div>
