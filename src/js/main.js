@@ -168,6 +168,23 @@
 			});
 		}
 
+		// A "Buy" button reveals the payment QR rather than following
+		// item.link: those are placeholders, and the QR plus the UPI id are
+		// the actual way to pay. The popover is its own scroll container,
+		// so this animates the panel and leaves the page where it is.
+		// stopPropagation is deliberately not called - the outside-click
+		// handler below relies on seeing every other click.
+		var qrEl = document.getElementById("coffee-qr");
+		if(qrEl) {
+			document.addEventListener("click", function(event) {
+				var trigger = event.target.closest && event.target.closest(".btn-buy");
+				if(!trigger || !popover.contains(trigger)) { return; }
+				event.preventDefault();
+				var smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+				qrEl.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+			});
+		}
+
 		document.addEventListener("click", function(event) {
 			if(!isOpen()) { return; }
 			if(popover.contains(event.target) || fab.contains(event.target)) { return; }

@@ -86,7 +86,7 @@
 
     {% if coffee.qr %}
     {% if coffee.qr.image %}
-    <div class="coffee-qr-wrap">
+    <div class="coffee-qr-wrap" id="coffee-qr">
         <img src="{{ coffee.qr.image }}" alt="{{ coffee.qr.caption or coffee.title }}">
         {% if coffee.qr.ribbon %}
         <span class="coffee-qr-ribbon">{{ coffee.qr.ribbon }}</span>
