@@ -207,11 +207,11 @@
 			fab.focus();
 		});
 
-		var flash = function(trigger, label) {
+		var flash = function(trigger, label, restoreTo) {
 			trigger.textContent = label;
 			trigger.classList.add("copied");
 			setTimeout(function() {
-				trigger.textContent = "Copy";
+				trigger.textContent = restoreTo;
 				trigger.classList.remove("copied");
 			}, 1500);
 		};
@@ -227,9 +227,11 @@
 				? navigator.clipboard.writeText(source.textContent.trim())
 				: Promise.reject();
 			written.then(function() {
-				flash(trigger, "Copied");
+				flash(trigger, trigger.getAttribute("data-copied-label"),
+					trigger.getAttribute("data-copy-label"));
 			}).catch(function() {
-				flash(trigger, "Failed");
+				flash(trigger, trigger.getAttribute("data-copied-failed-label"),
+					trigger.getAttribute("data-copy-label"));
 			});
 		});
 

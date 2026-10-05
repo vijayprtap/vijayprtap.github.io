@@ -34,21 +34,21 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>About Me</h2>
+					<h2>{{ home.about_heading }}</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<ul class="info">
-						<li><span class="first-block">Full Name:</span><span class="second-block">{{ about.fullname
+						<li><span class="first-block">{{ about.label_fullname }}</span><span class="second-block">{{ about.fullname
 								}}</span></li>
-						<li><span class="first-block">Phone:</span><span class="second-block">{{ about.phone }}</span>
+						<li><span class="first-block">{{ about.label_phone }}</span><span class="second-block">{{ about.phone }}</span>
 						</li>
-						<li><span class="first-block">Email:</span><span class="second-block">{{ about.email }}</span>
+						<li><span class="first-block">{{ about.label_email }}</span><span class="second-block">{{ about.email }}</span>
 						</li>
-						<li><span class="first-block">Languages:</span><span class="second-block">{{ about.languages
+						<li><span class="first-block">{{ about.label_languages }}</span><span class="second-block">{{ about.languages
 								}}</span></li>
-						<li><span class="first-block">Nationality:</span><span class="second-block">{{ about.nationality
+						<li><span class="first-block">{{ about.label_nationality }}</span><span class="second-block">{{ about.nationality
 								}}</span></li>
 					</ul>
 				</div>
@@ -105,7 +105,7 @@
 					<ul class="timeline">
 						<li class="timeline-heading text-center animate-box">
 							<div>
-								<h3>Work Experience</h3>
+								<h3>{{ home.work_experience_heading }}</h3>
 							</div>
 						</li>
 						{% for item in resume.work_experience %}
@@ -130,7 +130,7 @@
 						<br>
 						<li class="timeline-heading text-center animate-box">
 							<div>
-								<h3>Education</h3>
+								<h3>{{ home.education_heading }}</h3>
 							</div>
 						</li>
 						{% for item in resume.education %}

@@ -18,14 +18,14 @@ module.exports = config => {
     // locales are not mirror images - the projects page builds as
     // <locale>/projects/index.html - so blind prefixing would yield /de/de/.
     // Anything not root-relative (https:, mailto:, #anchor) passes through.
-    config.addGlobal('localePath', (currentUrl, path) => {
+    config.addNunjucksGlobal('localePath', (currentUrl, path) => {
         if (!isRootRelative(path)) { return path; }
         return isGermanUrl(currentUrl) ? (path.replace(/^\/de(?=\/|$)/, '') || '/') : '/de' + path;
     });
 
     // Same path in the CURRENT locale - for internal links, which must not
     // silently drop a German visitor into the English site.
-    config.addGlobal('localeUrl', (currentUrl, path) => {
+    config.addNunjucksGlobal('localeUrl', (currentUrl, path) => {
         if (!isRootRelative(path)) { return path; }
         return isGermanUrl(currentUrl) && !isGermanUrl(path) ? '/de' + path : path;
     });

@@ -1,4 +1,9 @@
 {
+    "label_fullname": "Full Name:",
+    "label_phone": "Phone:",
+    "label_email": "Email:",
+    "label_languages": "Languages:",
+    "label_nationality": "Nationality:",
     "fullname": "Vijay Pratap Singh",
     "phone": "8510945954",
     "email": "vijayypratap002@gmail.com",

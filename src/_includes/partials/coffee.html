@@ -46,7 +46,7 @@
             {{ pixelCup("cup-icon-head") }}
             <h4>{{ coffee.title }}</h4>
         </div>
-        <button class="coffee-close" id="coffee-close" type="button" aria-label="Close">&#10005;</button>
+        <button class="coffee-close" id="coffee-close" type="button" aria-label="{{ coffee.close_label }}">&#10005;</button>
     </div>
 
     {% if coffee.description %}
@@ -82,7 +82,7 @@
     {% endif %}
 
     {% if coffee.qr and coffee.items %}
-    <div class="coffee-divider">or</div>
+    <div class="coffee-divider">{{ coffee.or_divider }}</div>
     {% endif %}
 
     {% if coffee.qr %}
@@ -98,10 +98,12 @@
     <p class="coffee-note coffee-note-center">{{ coffee.qr.caption }}</p>
     {% endif %}
     {% if coffee.qr.upi_id %}
-    <p class="coffee-fineprint">QR didn't work? Use this UPI ID instead:</p>
+    <p class="coffee-fineprint">{{ coffee.qr_fallback_note }}</p>
     <div class="coffee-code-row">
         <code id="coffee-upi-id">{{ coffee.qr.upi_id }}</code>
-        <button class="coffee-copy" type="button" data-copy-target="coffee-upi-id">Copy</button>
+        <button class="coffee-copy" type="button" data-copy-target="coffee-upi-id"
+            data-copy-label="{{ coffee.copy_label }}" data-copied-label="{{ coffee.copied_label }}"
+            data-copied-failed-label="{{ coffee.copy_failed_label }}">{{ coffee.copy_label }}</button>
     </div>
     {% endif %}
     {% endif %}
@@ -118,6 +120,6 @@
     {% endif %}
 
     {% else %}
-    <p class="coffee-note">Nothing to show yet. Add your links in <code>src/_data/coffee.json</code>.</p>
+    <p class="coffee-note">{{ coffee.empty_note }}</p>
     {% endif %}
 </div>
