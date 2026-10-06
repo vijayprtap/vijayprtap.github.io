@@ -42,6 +42,16 @@ module.exports = config => {
         return isGermanUrl(currentUrl) ? currentUrl.replace(/^\/de(?=\/|$)/, '') || '/' : currentUrl;
     });
 
+        // German content, as a Nunjucks global rather than Eleventy data.
+    //
+    // It must NOT be added with addGlobalData / a directory data file: Eleventy
+    // 2.0 deep-merges that with src/_data/*.json and CONCATENATES arrays
+    // (src/Util/Merge.js -> target.concat(source)). Each dataset here is the full
+    // merged object, so every array in it collided with the identical array in the
+    // English data and was rendered twice - 3 coffee cards became 6, 8 CV entries
+    // became 16. Templates alias these names only on /de/ pages.
+    config.addNunjucksGlobal('deData', require('./src/de/i18n/index.js'));
+
     return {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',

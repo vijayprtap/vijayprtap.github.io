@@ -1,5 +1,17 @@
 {% extends "layouts/base.html" %}
 {% block content %}
+{# German aliasing, scoped to this block - see src/de/i18n/index.js. #}
+{%- if isGermanPage(page.url) -%}
+{%- set about = deData.about -%}
+{%- set contact = deData.contact -%}
+{%- set coffee = deData.coffee -%}
+{%- set home = deData.home -%}
+{%- set portfolio = deData.portfolio -%}
+{%- set projects = deData.projects -%}
+{%- set resume = deData.resume -%}
+{%- set service = deData.service -%}
+{%- set skill = deData.skill -%}
+{%- endif -%}
 {% include "partials/site-head.html" %}
 <div id="embedded-projects">
     <div class="container my-3">

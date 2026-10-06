@@ -1,5 +1,20 @@
 {% extends "layouts/base.html" %}
 {% block content %}
+{# German aliasing, scoped to this block. Must sit INSIDE the block: with
+   {% extends %} only block content is rendered, so a top-level set would not
+   reach the sections below. See src/de/i18n/index.js for why German data is
+   supplied as a Nunjucks global instead of via the data cascade. #}
+{%- if isGermanPage(page.url) -%}
+{%- set about = deData.about -%}
+{%- set contact = deData.contact -%}
+{%- set coffee = deData.coffee -%}
+{%- set home = deData.home -%}
+{%- set portfolio = deData.portfolio -%}
+{%- set projects = deData.projects -%}
+{%- set resume = deData.resume -%}
+{%- set service = deData.service -%}
+{%- set skill = deData.skill -%}
+{%- endif -%}
 <div class="fh5co-loader"></div>
 <div id="page">
 	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner"

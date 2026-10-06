@@ -1,10 +1,22 @@
-{#- Nunjucks has no ternary operator, so htmlLang needs an explicit branch.
-    localeAlternate handles both directions on its own, so the hreflang paths
-    are computed once and are identical from either locale. -#}
+{# German content comes from the deData Nunjucks global, never from the data
+   cascade - Eleventy 2.0 concatenates arrays when merging global data with
+   directory data, which duplicated every repeated element on /de/. See
+   src/de/i18n/index.js for the full explanation. Only base.html's own markup
+   and its includes need this; the inner layouts alias again for their blocks. #}
+{%- if isGermanPage(page.url) -%}
+{%- set about = deData.about -%}
+{%- set contact = deData.contact -%}
+{%- set coffee = deData.coffee -%}
+{%- set home = deData.home -%}
+{%- set portfolio = deData.portfolio -%}
+{%- set projects = deData.projects -%}
+{%- set resume = deData.resume -%}
+{%- set service = deData.service -%}
+{%- set skill = deData.skill -%}
+{%- endif -%}
+{%- set htmlLang = 'en' -%}
 {%- if isGermanPage(page.url) -%}
 {%- set htmlLang = 'de' -%}
-{%- else -%}
-{%- set htmlLang = 'en' -%}
 {%- endif -%}
 {%- set enPath = localeAlternate(page.url, 'en') -%}
 {%- set dePath = localeAlternate(page.url, 'de') -%}
